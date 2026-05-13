@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pip install git-filter-repo)",
+      "PowerShell(pip install *)",
+      "Bash(py *)"
+    ]
+  }
+}
