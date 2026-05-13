@@ -1,0 +1,2 @@
+# Large data files (>100MB — excluded from GitHub)
+source_data/WAS_data/*.tab
