@@ -1,0 +1,97 @@
+round,price_basis,group,measure,weighted_mean,weighted_median
+5,Nominal,Owner,Total wealth,961741.6201813504,658313.421198911
+5,Nominal,Owner,Total wealth excl private pension,579560.141980691,366000.0
+5,Nominal,Owner,Property wealth,340669.34419194516,230000.0
+5,Nominal,Owner,Financial wealth,171151.75429994854,48000.0
+5,Nominal,Owner,Private pension wealth,382181.4782006595,244586.810104278
+5,Nominal,Owner,Physical wealth,69366.62142724638,56000.0
+5,Real terms (March 2022 prices),Owner,Total wealth,1115965.1270032602,763879.61722782
+5,Real terms (March 2022 prices),Owner,Total wealth excl private pension,672497.5751070766,424691.2350597609
+5,Real terms (March 2022 prices),Owner,Property wealth,395298.5916171475,266882.4701195219
+5,Real terms (March 2022 prices),Owner,Financial wealth,198597.40414286856,55697.21115537848
+5,Real terms (March 2022 prices),Owner,Private pension wealth,443467.55189618346,283808.4001708006
+5,Real terms (March 2022 prices),Owner,Physical wealth,80490.15334934466,64980.079681274896
+5,Nominal,Renter,Total wealth,103886.57164223732,40786.1368637023
+5,Nominal,Renter,Total wealth excl private pension,38139.904009620965,20900.0
+5,Nominal,Renter,Property wealth,4664.604218722008,0.0
+5,Nominal,Renter,Financial wealth,11327.768670365787,1050.0
+5,Nominal,Renter,Private pension wealth,65746.66763261636,500.0
+5,Nominal,Renter,Physical wealth,23442.347063272522,15700.0
+5,Real terms (March 2022 prices),Renter,Total wealth,120545.67327012598,47326.54327312069
+5,Real terms (March 2022 prices),Renter,Total wealth excl private pension,44255.964313952616,24251.49402390438
+5,Real terms (March 2022 prices),Renter,Property wealth,5412.613460967271,0.0
+5,Real terms (March 2022 prices),Renter,Financial wealth,13144.273407346753,1218.3764940239043
+5,Real terms (March 2022 prices),Renter,Private pension wealth,76289.70895617336,580.1792828685258
+5,Real terms (March 2022 prices),Renter,Physical wealth,27201.52821584909,18217.629482071712
+6,Nominal,Owner,Total wealth,1025638.6304441789,751132.300344628
+6,Nominal,Owner,Total wealth excl private pension,586172.9338983372,410200.0
+6,Nominal,Owner,Property wealth,371938.6681046241,257000.0
+6,Nominal,Owner,Financial wealth,145816.17212360798,51135.0
+6,Nominal,Owner,Private pension wealth,439465.6965458416,282942.795783528
+6,Nominal,Owner,Physical wealth,70967.04527174993,61200.0
+6,Real terms (March 2022 prices),Owner,Total wealth,1136887.7302259451,832606.2130366239
+6,Real terms (March 2022 prices),Owner,Total wealth excl private pension,649754.0133126193,454693.6251189344
+6,Real terms (March 2022 prices),Owner,Property wealth,412282.1582701114,284876.30827783066
+6,Real terms (March 2022 prices),Owner,Financial wealth,161632.57899524577,56681.517602283544
+6,Real terms (March 2022 prices),Owner,Private pension wealth,487133.7169133259,313633.07049268327
+6,Real terms (March 2022 prices),Owner,Physical wealth,78664.70765136885,67838.24928639391
+6,Nominal,Renter,Total wealth,127594.55501188006,41240.9773067376
+6,Nominal,Renter,Total wealth excl private pension,43817.472593785846,23209.0
+6,Nominal,Renter,Property wealth,3518.796200068508,0.0
+6,Nominal,Renter,Financial wealth,17647.372997335533,1601.0
+6,Nominal,Renter,Private pension wealth,83777.08241809421,550.0
+6,Nominal,Renter,Physical wealth,23996.393124481358,15700.0
+6,Real terms (March 2022 prices),Renter,Total wealth,141434.49723010496,45714.308812891824
+6,Real terms (March 2022 prices),Renter,Total wealth excl private pension,48570.27171432971,25726.43672692674
+6,Real terms (March 2022 prices),Renter,Property wealth,3900.4734282395925,0.0
+6,Real terms (March 2022 prices),Renter,Financial wealth,19561.550468026544,1774.6574690770694
+6,Real terms (March 2022 prices),Renter,Private pension wealth,92864.22551577524,609.6574690770694
+6,Real terms (March 2022 prices),Renter,Physical wealth,26599.236907726718,17402.949571836347
+7,Nominal,Owner,Total wealth,1107100.5553365783,796289.854286684
+7,Nominal,Owner,Total wealth excl private pension,623059.3280088864,434024.0
+7,Nominal,Owner,Property wealth,393960.92557276867,275000.0
+7,Nominal,Owner,Financial wealth,157728.0018692523,55000.0
+7,Nominal,Owner,Private pension wealth,484041.2273276918,296000.0
+7,Nominal,Owner,Physical wealth,73519.23327959023,60000.0
+7,Real terms (March 2022 prices),Owner,Total wealth,1187635.494444856,854215.175178625
+7,Real terms (March 2022 prices),Owner,Total wealth excl private pension,668383.1649450761,465596.6482504604
+7,Real terms (March 2022 prices),Owner,Property wealth,422619.2249468466,295004.60405156534
+7,Real terms (March 2022 prices),Owner,Financial wealth,169201.76996103034,59000.92081031307
+7,Real terms (March 2022 prices),Owner,Private pension wealth,519252.3294997798,317532.22836095764
+7,Real terms (March 2022 prices),Owner,Physical wealth,78867.31746843703,64364.640883977896
+7,Nominal,Renter,Total wealth,129625.08673590541,49857.0619819965
+7,Nominal,Renter,Total wealth excl private pension,45371.76534640812,24000.0
+7,Nominal,Renter,Property wealth,6954.204359700082,0.0
+7,Nominal,Renter,Financial wealth,14585.704249136828,2000.0
+7,Nominal,Renter,Private pension wealth,84253.3213894973,11812.2528544433
+7,Nominal,Renter,Physical wealth,25190.822659837195,15500.0
+7,Real terms (March 2022 prices),Renter,Total wealth,139054.53595518396,53483.8648333572
+7,Real terms (March 2022 prices),Renter,Total wealth excl private pension,48672.28971322786,25745.85635359116
+7,Real terms (March 2022 prices),Renter,Property wealth,7460.081104098153,0.0
+7,Real terms (March 2022 prices),Renter,Financial wealth,15646.726933926708,2145.48802946593
+7,Real terms (March 2022 prices),Renter,Private pension wealth,90382.24624195613,12671.523550116432
+7,Real terms (March 2022 prices),Renter,Physical wealth,27023.3042345399,16627.532228360957
+8,Nominal,Owner,Total wealth,947283.1805061431,712466.24
+8,Nominal,Owner,Total wealth excl private pension,630712.0913627183,456300.0
+8,Nominal,Owner,Property wealth,400442.55285973084,300000.0
+8,Nominal,Owner,Financial wealth,157524.21710859967,62530.0
+8,Nominal,Owner,Private pension wealth,316571.08914342476,209401.92
+8,Nominal,Owner,Physical wealth,74819.50953263426,60500.0
+8,March 2022 prices,Owner,Total wealth,947283.1805061431,712466.24
+8,March 2022 prices,Owner,Total wealth excl private pension,630712.0913627183,456300.0
+8,March 2022 prices,Owner,Property wealth,400442.55285973084,300000.0
+8,March 2022 prices,Owner,Financial wealth,157524.21710859967,62530.0
+8,March 2022 prices,Owner,Private pension wealth,316571.08914342476,209401.92
+8,March 2022 prices,Owner,Physical wealth,74819.50953263426,60500.0
+8,Nominal,Renter,Total wealth,154698.56274273613,56030.0
+8,Nominal,Renter,Total wealth excl private pension,69331.2610461343,25959.0
+8,Nominal,Renter,Property wealth,19763.31284021802,0.0
+8,Nominal,Renter,Financial wealth,22815.95756360072,2700.0
+8,Nominal,Renter,Private pension wealth,85367.30169660185,15373.44
+8,Nominal,Renter,Physical wealth,28253.4529321057,17500.0
+8,March 2022 prices,Renter,Total wealth,154698.56274273613,56030.0
+8,March 2022 prices,Renter,Total wealth excl private pension,69331.2610461343,25959.0
+8,March 2022 prices,Renter,Property wealth,19763.31284021802,0.0
+8,March 2022 prices,Renter,Financial wealth,22815.95756360072,2700.0
+8,March 2022 prices,Renter,Private pension wealth,85367.30169660185,15373.44
+8,March 2022 prices,Renter,Physical wealth,28253.4529321057,17500.0

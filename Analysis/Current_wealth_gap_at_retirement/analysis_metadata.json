@@ -1,0 +1,36 @@
+{
+  "age_bands_used_for_65_74": [
+    14,
+    15
+  ],
+  "owner_codes": [
+    1,
+    2,
+    3
+  ],
+  "renter_codes": [
+    4,
+    5
+  ],
+  "near_zero_private_wealth_threshold": 1000,
+  "target_price_year": 2022,
+  "round_end_month": {
+    "5": "2016-03",
+    "6": "2018-03",
+    "7": "2020-03",
+    "8": "2022-03"
+  },
+  "round_end_cpih_index_2015_100": {
+    "5": 100.4,
+    "6": 105.1,
+    "7": 108.6,
+    "8": 116.5
+  },
+  "inflation_factors_to_2022_prices": {
+    "5": 1.1603585657370517,
+    "6": 1.1084681255946718,
+    "7": 1.072744014732965,
+    "8": 1.0
+  },
+  "round_8_total_wealth_method": "TotWlth_oldR8 - TOTPEN_oldR8_aggr + totalpenr8_aggr"
+}

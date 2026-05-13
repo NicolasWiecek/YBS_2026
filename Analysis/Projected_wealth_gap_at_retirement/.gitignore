@@ -1,0 +1,6 @@
+.venv/
+.matplotlib-cache/
+__pycache__/
+*.pyc
+fontlist-*.json
+outputs_v4/
