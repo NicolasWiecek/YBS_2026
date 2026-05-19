@@ -252,7 +252,7 @@ def weighted_group_stats(df: pd.DataFrame, value_col: str, weight_col: str) -> d
     }
 
 
-def make_weighted_deciles(df: pd.DataFrame, value_col: str, weight_col: str) -> pd.Series:
+def make_weighted_quantile_groups(df: pd.DataFrame, value_col: str, weight_col: str, n: int) -> pd.Series:
     values = df[value_col]
     weights = df[weight_col]
     mask = values.notna() & weights.notna() & (weights > 0)
@@ -266,9 +266,13 @@ def make_weighted_deciles(df: pd.DataFrame, value_col: str, weight_col: str) -> 
     )
     cum_weight = temp["weight"].cumsum()
     total_weight = temp["weight"].sum()
-    temp["decile"] = np.ceil((cum_weight / total_weight) * 10).clip(1, 10).astype(int)
-    out.loc[temp.index] = temp["decile"]
+    temp["quantile_group"] = np.ceil((cum_weight / total_weight) * n).clip(1, n).astype(int)
+    out.loc[temp.index] = temp["quantile_group"]
     return out
+
+
+def make_weighted_deciles(df: pd.DataFrame, value_col: str, weight_col: str) -> pd.Series:
+    return make_weighted_quantile_groups(df, value_col, weight_col, 10)
 
 
 def format_money(value: float) -> str:
@@ -464,6 +468,33 @@ def gap_rows(round_no: int, cohort: pd.DataFrame) -> list[dict]:
     return rows
 
 
+def quantile_rows_for_group(round_no: int, group_name: str, group_df: pd.DataFrame) -> list[dict]:
+    rows = []
+    for price_basis, suffix in [("Nominal", "nominal"), ("Real terms (March 2022 prices)", "real")]:
+        actual_price_basis = price_basis if round_no != 8 or suffix != "real" else "March 2022 prices"
+        for col, label in MEASURE_SPECS:
+            value_col = f"{col}_{suffix}"
+            if value_col not in group_df.columns:
+                continue
+            for quantile_type, n in [("decile", 10), ("quintile", 5)]:
+                q_col = make_weighted_quantile_groups(group_df, value_col, "weight", n)
+                temp = group_df.copy()
+                temp["_q"] = q_col.values
+                for q in range(1, n + 1):
+                    q_df = temp[temp["_q"] == q]
+                    mean_val = weighted_mean(q_df[value_col], q_df["weight"]) if not q_df.empty else np.nan
+                    rows.append({
+                        "round": round_no,
+                        "price_basis": actual_price_basis,
+                        "group": group_name,
+                        "measure": label,
+                        "quantile_type": quantile_type,
+                        "quantile_number": q,
+                        "weighted_mean_wealth": mean_val,
+                    })
+    return rows
+
+
 def renter_zero_rows(round_no: int, cohort: pd.DataFrame) -> dict:
     renters = cohort[cohort["owner_group"] == "Renter"].copy()
     if renters.empty:
@@ -624,6 +655,8 @@ def analyse_round(
         "group_rows": summary_rows_for_group(round_no, "Owner", cohort[cohort["owner_group"] == "Owner"])
         + summary_rows_for_group(round_no, "Renter", cohort[cohort["owner_group"] == "Renter"]),
         "gap_rows": gap_rows(round_no, cohort),
+        "quantile_rows": quantile_rows_for_group(round_no, "Owner", cohort[cohort["owner_group"] == "Owner"])
+        + quantile_rows_for_group(round_no, "Renter", cohort[cohort["owner_group"] == "Renter"]),
         "renter_private_wealth_rows": renter_zero_rows(round_no, cohort),
         "sample_rows": [
             {
@@ -648,6 +681,7 @@ def write_outputs(all_results: list[dict], output_dir: Path, with_charts: bool) 
     overall_df = pd.DataFrame([row for r in all_results for row in r["overall_rows"]])
     group_df = pd.DataFrame([row for r in all_results for row in r["group_rows"]])
     gaps_df = pd.DataFrame([row for r in all_results for row in r["gap_rows"]])
+    quantile_df = pd.DataFrame([row for r in all_results for row in r["quantile_rows"]])
     renter_df = pd.DataFrame([row for r in all_results for row in r["renter_private_wealth_rows"]])
     sample_df = pd.DataFrame([row for r in all_results for row in r["sample_rows"]])
 
@@ -655,6 +689,7 @@ def write_outputs(all_results: list[dict], output_dir: Path, with_charts: bool) 
     overall_df.to_csv(output_dir / "overall_medians_by_round.csv", index=False)
     group_df.to_csv(output_dir / "cohort_owner_renter_stats_by_round.csv", index=False)
     gaps_df.to_csv(output_dir / "owner_renter_gaps_by_round.csv", index=False)
+    quantile_df.to_csv(output_dir / "wealth_by_quantile_owner_renter.csv", index=False)
     renter_df.to_csv(output_dir / "renter_private_wealth_shares.csv", index=False)
     sample_df.to_csv(output_dir / "sample_sizes_by_round.csv", index=False)
 
@@ -668,6 +703,7 @@ def write_outputs(all_results: list[dict], output_dir: Path, with_charts: bool) 
         overall_df.to_excel(writer, sheet_name="overall_medians", index=False)
         group_df.to_excel(writer, sheet_name="group_stats", index=False)
         gaps_df.to_excel(writer, sheet_name="gaps", index=False)
+        quantile_df.to_excel(writer, sheet_name="wealth_by_quantile", index=False)
         renter_df.to_excel(writer, sheet_name="renter_private_wealth", index=False)
 
     summary_lines = []
